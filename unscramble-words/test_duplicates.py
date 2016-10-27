@@ -1,16 +1,17 @@
-f = open("wordlist.txt")
-d = f.read()
-f.close()
+with open("book.txt") as f:
+    book = f.read().split()
 
-result = []
-for i in d.split():
-    result.append(''.join(sorted(i)))
+sortedBook = [''.join(sorted(line)) for line in book]
 
-seen = set()
-uniq = []
-for x in result:
-    if x not in seen:
-        uniq.append(x)
-        seen.add(x)
+uniqWords = set()
+duplicates = []
+for word in sortedBook:
+    if word in uniqWords:
+        duplicates.append(word)
     else:
-        print x
+        uniqWords.add(word)
+
+if(len(duplicates) > 0):
+    print "Duplicates: %s" % duplicates
+else:
+    print "No duplicates found from book after sorting"
