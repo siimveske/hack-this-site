@@ -3,7 +3,7 @@ Find the original (unscrambled) words, which were randomly taken from file: "boo
 Print out a comma separated list of the original words, in the same order as in the list below.
 The soultion must find the answers under 30s
 
-List of scrambled words:
+List of scrambled words (also present in file words.txt):
 boebir
 acrloe
 eohmrt
