@@ -26,16 +26,15 @@ def gen_primes():
             del D[q]
         q += 1
 
+# Variable to map Char => PrimeNumber
 alphabet = {}
 generator = gen_primes()
 
-# Get characters present in book
+# Get characters present in book and
+# map each charater to a prime number
 for letter in ''.join(book):
-    alphabet[letter] = True
-
-# Map each charater to a prime number
-for letter in alphabet:
-    alphabet[letter] = generator.next()
+    if letter not in alphabet:
+        alphabet[letter] = generator.next()
 
 # Use map to transform each line in words.txt into a unique prime number
 needle_list = []
